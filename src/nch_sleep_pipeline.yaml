@@ -1,0 +1,9 @@
+
+# Example channel preferences. If your EDF uses specific names, pass this JSON via --channels-json
+# {
+#   "EEG": "C3-M2",
+#   "ECG": "ECG",
+#   "AIRFLOW": "Nasal Pressure",
+#   "SPO2": "SpO2",
+#   "RIP": "Chest"
+# }
