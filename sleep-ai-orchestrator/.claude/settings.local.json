@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:inforum.pt)",
+      "WebFetch(domain:easychair.org)",
+      "WebFetch(domain:www.springer.com)",
+      "WebFetch(domain:link.springer.com)"
+    ]
+  }
+}

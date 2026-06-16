@@ -1,0 +1,221 @@
+manifest_csv: /Volumes/CORSAIR/tese/sleep-ai-orchestrator/outputs/inventory/paired_sleep_records_step4_splits.csv
+tsv_total_in_manifest: 1833
+sample_size_requested: 300
+sample_size_effective: 300
+unreadable_count: 0
+total_rows_scanned: 379183
+distinct_descriptions: 3832
+files_with_keyword: 297
+
+keyword_hits:
+  desat: 17942
+  arousal: 11110
+  obstructive: 5513
+  hypopnea: 5001
+  apnea: 2418
+  central: 688
+  snore: 480
+  mixed: 212
+  rera: 22
+
+top_descriptions_first_200:
+  105691 | Sleep stage N2
+   65178 | Sleep stage N3
+   46552 | Sleep stage W
+   46210 | Sleep stage R
+   26597 | Sleep stage ?
+   17690 | Oxygen Desaturation
+   10970 | EEG arousal
+   10952 | Oximeter Event
+    9053 | Sleep stage N1
+    3956 | Obstructive Hypopnea
+    3190 | Limb Movement
+    2241 | Sleep stage 2
+    2052 | Gain/Filter Change
+    1779 | move
+    1654 | Body Position: Supine
+    1549 | Obstructive Apnea
+    1117 | Sleep stage 3
+    1034 | Montage:Channel Test Referential
+    1028 | Body Position: Right
+     984 | Hypopnea
+     937 | Body Position: Left
+     792 | Montage:NCH_PSG_STANDARD
+     686 | Impedance at 10 kOhm
+     647 | Central Apnea
+     429 | Started Analyzer - Sleep Events
+     428 | Started Analyzer - ECG
+     398 | Montage:NCH_PSG_STANDARD, Ref
+     379 | Body Position: Prone
+     331 | Video Recording ON
+     309 | Started Analyzer - Data Trends
+     302 | Lights Off
+     301 | Lights On
+     283 | Stopped Analyzer - Data Trends
+     282 | movement
+     277 | Start Recording
+     276 | Montage:NCH Standard with TcCO2_NDx
+     266 | Stopped Analyzer - Sleep Events
+     234 | Body Position: Upright
+     220 | Off
+     207 | Mixed Apnea
+     144 | Montage:NCH Standard with TcCO2_NDx, Ref
+     139 | XXX
+     117 | Soft Snoring
+     117 | Hold Breath
+     109 | crying
+     106 | Breakout box disconnected.
+     102 | Sleep stage 1
+      97 | cbg
+      96 | Breakout box reconnected.
+      92 | Recording Analyzer - ECG
+      92 | soft snores
+      88 | eyes open
+      88 | Eyes Open
+      84 | eyes closed
+      81 | Artifact
+      80 | SNORES
+      80 | Eyes Closed
+      78 | awake
+      78 | cough
+      77 | Roll Eyes Down
+      76 | Roll Eyes Up
+      75 | stretching
+      75 | CBG
+      73 | Roll Eyes Right
+      73 | Flex RT Foot
+      72 | Blinks
+      72 | Flex LT Foot
+      70 | Roll Eyes Left
+      68 | tech out
+      67 | Video Recording OFF
+      67 | moving
+      66 | Impedance at 20 kOhm
+      65 | Nasal Breathing
+      63 | Oral Breathing
+      62 | Headbox Reconnected
+      61 | Close Eyes
+      61 | Flex Right Leg
+      59 | Snore or Humm
+      59 | Flex Left Leg
+      58 | cry
+      57 | Open Eyes
+      57 | Look Down
+      57 | Blink
+      57 | PATIENT MOVING
+      56 | EYES CLOSED
+      56 | Look Up
+      53 | Look Left
+      53 | Look Right
+      53 | Chewing Mostion
+      53 | leg movement
+      52 | Impedance at 5 kOhm
+      50 | Oral Breath
+      50 | TECH OUT
+      50 | Periodic Breathing
+      48 | Open Eyes (30 seconds)
+      48 | Nasal Breath
+      47 | chew gum
+      46 | Close Eyes (30 seconds)
+      46 | tech in
+      45 | mvmt
+      43 | Stop Recording
+      43 | coughing
+      42 | Eyes Up and Down X5
+      42 | Simulate Snore or Hum (5 seconds)
+      42 | Deep Breath
+      41 | Eye Blinks X5
+      41 | Grit Teeth or Chew (5 seconds)
+      41 | Breath Hold (10 seconds)
+      41 | MOVE
+      40 | Flex Left Foot
+      40 | Flex Right Foot
+      37 | Eyes Left and Right X5
+      37 | Oral Breathing (10 seconds)
+      37 | Swallow
+      36 | RAT
+      36 | Nasal Breathing (10 seconds)
+      34 | so
+      33 | central
+      32 | BREATH HOLD
+      32 | LAT
+      31 | sleep onset
+      31 | Normal Breathing
+      30 | EYES OPEN
+      29 | REM
+      29 | Hold still
+      29 | Good Night
+      29 | CBG STICK
+      28 | regained sleep
+      28 | EYES UP AND DOWN
+      28 | Moderate Snoring
+      28 | snore
+      28 | Calibration, EtCO2
+      27 | EYES LT TO RT
+      27 | BLINKS
+      26 | NOSE BREATHING
+      26 | HOB flat 1 pillow
+      26 | desat 89
+      26 | chew
+      26 | yawn
+      25 | BIO CALS START
+      25 | breath hold
+      25 | desat 87
+      24 | MOUTH BREATHING
+      24 | mouth breathing
+      24 | desat 92
+      24 | Pt moving
+      24 | leg movements
+      23 | CHEWS
+      23 | rem
+      23 | PT MOVING
+      22 | tech in adjusting cannula
+      22 | gasp
+      22 | mom coughing
+      22 | loud snores
+      22 | PVC
+      21 | Loud Snoring
+      21 | Sit Up
+      21 | shaking head
+      20 | snores
+      20 | mvmnt
+      19 | sigh
+      18 | blinks
+      18 | Impedance at 25 kOhm
+      18 | snort/gasp
+      17 | bed flat for biocals eyes open
+      17 | eyes closed up and down
+      17 | nasal breathing
+      17 | biocals done
+      17 | Recording Analyzer - Sleep Events
+      16 | cbg stick
+      16 | left foot flex
+      16 | right foot flex
+      16 | eyes closed left and right
+      16 | Montage:NCH_PSG_STANDARD [01]
+      16 | hob flat 1 pillow
+      16 | s.o.
+      15 | soft snoring
+      15 | oral breathing
+      15 | snoring
+      15 | wiggle
+      14 | desat 90
+      14 | hands to face
+      14 | chewing
+      14 | snort
+      14 | Tech out
+      14 | Stopped Analyzer - ECG
+      13 | bed flat controls locked one pillow in use
+      13 | kicking
+      13 | BIO CALS END
+      13 | talking
+      13 | PATIENT COUGHING
+      13 | noise in room
+      13 | BIO CAL END
+      13 | sitting up
+      13 | CBG stick
+      13 | Tech in
+      13 | Room Air
+      13 | moan
+      13 | mom making noise
+      12 | ro

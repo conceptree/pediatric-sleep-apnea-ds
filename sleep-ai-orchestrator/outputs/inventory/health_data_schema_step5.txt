@@ -1,0 +1,175 @@
+health_data_dir: /Volumes/CORSAIR/tese/datasets/nch-sleep/all_raw/Health_Data
+csv_files_count: 9
+
+== DEMOGRAPHIC.csv ==
+encoding_used: utf-8-sig
+rows: 3673
+columns_count: 11
+id_like_columns: ['STUDY_PAT_ID']
+columns:
+  - STUDY_PAT_ID
+  - BIRTH_DATE
+  - PCORI_GENDER_CD
+  - PCORI_RACE_CD
+  - PCORI_HISPANIC_CD
+  - GENDER_DESCR
+  - RACE_DESCR
+  - ETHNICITY_DESCR
+  - LANGUAGE_DESCR
+  - PEDS_GEST_AGE_NUM_WEEKS
+  - PEDS_GEST_AGE_NUM_DAYS
+
+== DIAGNOSIS.csv ==
+encoding_used: utf-8-sig
+rows: 1513853
+columns_count: 15
+id_like_columns: ['STUDY_DX_ID', 'STUDY_ENC_ID', 'STUDY_PAT_ID', 'PROV_ID']
+columns:
+  - 
+  - STUDY_DX_ID
+  - STUDY_ENC_ID
+  - STUDY_PAT_ID
+  - DX_START_DATETIME
+  - DX_END_DATETIME
+  - DX_SOURCE_TYPE
+  - DX_ENC_TYPE
+  - DX_CODE_TYPE
+  - DX_CODE
+  - DX_NAME
+  - DX_ALT_CODE
+  - CLASS_OF_PROBLEM
+  - CHRONIC_YN
+  - PROV_ID
+
+== ENCOUNTER.csv ==
+encoding_used: utf-8-sig
+rows: 495138
+columns_count: 22
+id_like_columns: ['STUDY_ENC_ID', 'STUDY_PAT_ID', 'ENCOUNTER_DATE', 'VISIT_START_DATETIME', 'VISIT_END_DATETIME', 'ENCOUNTER_TYPE', 'VISIT_TYPE_CD', 'VISIT_TYPE_DESCR', 'ICU_VISIT_YN', 'PROV_ID', 'DEPT_ID', 'VISIT_REASON']
+columns:
+  - STUDY_ENC_ID
+  - STUDY_PAT_ID
+  - ENCOUNTER_DATE
+  - VISIT_START_DATETIME
+  - VISIT_END_DATETIME
+  - ADT_ARRIVAL_DATETIME
+  - ED_DEPARTURE_DATETIME
+  - ENCOUNTER_TYPE
+  - VISIT_TYPE_CD
+  - VISIT_TYPE_DESCR
+  - ICU_VISIT_YN
+  - PROV_ID
+  - PROV_TYPE
+  - DEPT_ID
+  - DEPT_SPECIALTY
+  - ADMIT_SOURCE
+  - HOSP_ADMIT_SOURCE
+  - DISCHARGE_DISPOSITION
+  - DISCHARGE_DESTINATION
+  - DRG_CODE
+  - DRG_NAME
+  - VISIT_REASON
+
+== MEASUREMENT.csv ==
+encoding_used: utf-8-sig
+rows: 332569
+columns_count: 9
+id_like_columns: ['STUDY_MEAS_ID', 'STUDY_PAT_ID', 'STUDY_ENC_ID', 'MEAS_RECORDED_DATETIME', 'STUDY_PROV_ID']
+columns:
+  - STUDY_MEAS_ID
+  - STUDY_PAT_ID
+  - STUDY_ENC_ID
+  - MEAS_RECORDED_DATETIME
+  - MEAS_TYPE
+  - MEAS_VALUE_NUMBER
+  - MEAS_VALUE_TEXT
+  - MEAS_SOURCE
+  - STUDY_PROV_ID
+
+== MEDICATION.csv ==
+encoding_used: utf-8-sig
+rows: 3035986
+columns_count: 28
+id_like_columns: ['STUDY_MED_ID', 'STUDY_ENC_ID', 'STUDY_PAT_ID', 'PRESCRIBING_PROV_ID']
+columns:
+  - STUDY_MED_ID
+  - STUDY_ENC_ID
+  - STUDY_PAT_ID
+  - MED_START_DATETIME
+  - MED_END_DATETIME
+  - MED_ORDER_DATETIME
+  - MED_TAKEN_DATETIME
+  - MED_SOURCE_TYPE
+  - QUANTITY
+  - DAYS_SUPPLY
+  - FREQUENCY
+  - EFFECTIVE_DRUG_DOSE
+  - EFF_DRUG_DOSE_SOURCE_VALUE
+  - DRUG_DOSE_UNIT
+  - REFILLS
+  - RXNORM_CODE
+  - RXNORM_TERM_TYPE
+  - MEDICATION_DESCR
+  - GENERIC_DRUG_DESCR
+  - DRUG_ORDER_STATUS
+  - DRUG_ACTION
+  - ROUTE
+  - ROUTE_SOURCE_VALUE
+  - PRESCRIBING_PROV_ID
+  - PHARM_CLASS
+  - PHARM_SUBCLASS
+  - THERA_CLASS
+  - THERA_SUBCLASS
+
+== PROCEDURE.csv ==
+encoding_used: utf-8-sig
+rows: 283599
+columns_count: 9
+id_like_columns: ['STUDY_PROC_ID', 'STUDY_PAT_ID', 'STUDY_ENC_ID', 'STUDY_PROV_ID', 'PROC_ID_NCH']
+columns:
+  - STUDY_PROC_ID
+  - STUDY_PAT_ID
+  - STUDY_ENC_ID
+  - PROCEDURE_DATETIME
+  - STUDY_PROV_ID
+  - PROC_ID_NCH
+  - PROC_CODE
+  - PROC_CODE_TYPE
+  - PROC_DESCR
+
+== PROCEDURE_SURG_HX.csv ==
+encoding_used: utf-8-sig
+rows: 10190
+columns_count: 8
+id_like_columns: ['STUDY_SURGHX_ID', 'STUDY_PAT_ID']
+columns:
+  - STUDY_SURGHX_ID
+  - STUDY_PAT_ID
+  - PROC_NOTED_DATE
+  - PROC_START_TIME
+  - PROC_END_TIME
+  - PROC_CODE
+  - CPT_CODE
+  - PROC_DESCR
+
+== SLEEP_ENC_ID.csv ==
+encoding_used: utf-8-sig
+rows: 3964
+columns_count: 3
+id_like_columns: ['STUDY_PAT_ID', 'SLEEP_STUDY_ID', 'STUDY_ENC_ID']
+columns:
+  - STUDY_PAT_ID
+  - SLEEP_STUDY_ID
+  - STUDY_ENC_ID
+
+== SLEEP_STUDY.csv ==
+encoding_used: utf-8-sig
+rows: 3984
+columns_count: 5
+id_like_columns: ['STUDY_PAT_ID', 'SLEEP_STUDY_ID', 'SLEEP_STUDY_START_DATETIME', 'SLEEP_STUDY_DURATION_DATETIME', 'AGE_AT_SLEEP_STUDY_DAYS']
+columns:
+  - STUDY_PAT_ID
+  - SLEEP_STUDY_ID
+  - SLEEP_STUDY_START_DATETIME
+  - SLEEP_STUDY_DURATION_DATETIME
+  - AGE_AT_SLEEP_STUDY_DAYS

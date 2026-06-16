@@ -1,0 +1,13 @@
+timestamp: 2026-04-18T15:13:31Z
+
+== Sleep_Data: pastas (maxdepth 2) ==
+/Volumes/CORSAIR/tese/datasets/nch-sleep/all_raw/Sleep_Data
+
+== Health_Data: pastas (maxdepth 2) ==
+/Volumes/CORSAIR/tese/datasets/nch-sleep/all_raw/Health_Data
+
+== Top 20 extensoes de ficheiro ==
+1834 edf
+1833 tsv
+  63 atr
+  18 csv

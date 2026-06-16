@@ -1,0 +1,25 @@
+== /Volumes/CORSAIR/tese/datasets/nch-sleep/all_raw/Sleep_Data ==
+total_files: 3730
+extensions:
+  edf: 1834
+  tsv: 1833
+  atr: 63
+edf_count: 1834
+tsv_count: 1833
+paired_count: 1833
+only_edf_count: 1
+only_tsv_count: 0
+only_edf_sample: ['10345_25318']
+only_tsv_sample: []
+
+== /Volumes/CORSAIR/tese/datasets/nch-sleep/all_raw/Health_Data ==
+total_files: 18
+extensions:
+  csv: 18
+edf_count: 0
+tsv_count: 0
+paired_count: 0
+only_edf_count: 0
+only_tsv_count: 0
+only_edf_sample: []
+only_tsv_sample: []

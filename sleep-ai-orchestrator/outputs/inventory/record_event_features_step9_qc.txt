@@ -1,0 +1,8 @@
+manifest_csv: /Volumes/CORSAIR/tese/sleep-ai-orchestrator/outputs/inventory/paired_sleep_records_step4_splits.csv
+output_csv: /Volumes/CORSAIR/tese/sleep-ai-orchestrator/outputs/inventory/record_event_features_step9.csv
+rows_output: 1833
+unreadable_or_missing_tsv_count: 0
+label_obstructive_any_positive: 1137
+label_obstructive_any_negative: 696
+label_respiratory_burden_ge_5_positive: 187
+label_respiratory_burden_ge_5_negative: 1646

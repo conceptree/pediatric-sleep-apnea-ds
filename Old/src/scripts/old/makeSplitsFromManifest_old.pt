@@ -1,0 +1,167 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+make_splits_from_manifest.py
+Cria splits (train/val/test) com symlinks a partir de um manifest "limpo".
+
+Opções de rotulagem (escolhe UMA):
+  A) --labels-from-folders /path/positives /path/negatives
+     - Procura stems nessas pastas e atribui label=1 (positives) ou 0 (negatives).
+  B) --label-from-tsv --ahi-threshold 5.0
+     - Lê cada TSV do manifest, conta (case-insensitive) "apnea" ou "hypopnea" na coluna 'description'
+       e define AHI ≈ (#eventos / horas). Label = 1 se AHI >= threshold, senão 0.
+  C) Se não forneces rótulos, guarda tudo como label=-1 (unlabeled) e cria apenas /all/ sem classes.
+
+Split:
+  - Proporções: 80/10/10 com estratificação se houver labels binários.
+  - Saída: <out-dir>/{train,val,test}/{negatives,positives} com symlinks (ou /all/ se sem label)
+
+"""
+
+import argparse
+import pathlib
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+
+def stems_from_folder(folder: pathlib.Path):
+    edfs = list(folder.rglob("*.edf"))
+    return {f.stem for f in edfs}
+
+def infer_labels_from_folders(df: pd.DataFrame, pos_dir: pathlib.Path, neg_dir: pathlib.Path):
+    pos = stems_from_folder(pos_dir) if pos_dir else set()
+    neg = stems_from_folder(neg_dir) if neg_dir else set()
+    label = []
+    for s in df["stem"]:
+        if s in pos and s not in neg:
+            label.append(1)
+        elif s in neg and s not in pos:
+            label.append(0)
+        elif s in pos and s in neg:
+            # conflito: marcar como NaN para excluir
+            label.append(np.nan)
+        else:
+            label.append(np.nan)
+    df["label"] = label
+    return df
+
+def infer_labels_from_tsv(df: pd.DataFrame, ahi_threshold: float):
+    import pandas as pd
+    labs = []
+    for _, r in df.iterrows():
+        tsv = r["tsv_path"]
+        try:
+            t = pd.read_csv(tsv, sep="\t")
+        except Exception:
+            labs.append(np.nan)
+            continue
+        desc_col = None
+        for c in t.columns:
+            if c.strip().lower() == "description":
+                desc_col = c
+                break
+        if desc_col is None:
+            labs.append(np.nan)
+            continue
+        # conta eventos "apnea" ou "hypopnea"
+        desc = t[desc_col].astype(str).str.lower()
+        n_events = desc.str.contains("apnea|hypopnea", regex=True).sum()
+        hours = float(r["duration_h"]) if r["duration_h"] and r["duration_h"]>0 else np.nan
+        if not np.isfinite(hours) or hours <= 0:
+            labs.append(np.nan)
+            continue
+        ahi = n_events / hours
+        labs.append(1 if ahi >= ahi_threshold else 0)
+    df["label"] = labs
+    return df
+
+def symlink(src: pathlib.Path, dst: pathlib.Path):
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    if dst.exists() or dst.is_symlink():
+        dst.unlink()
+    dst.symlink_to(src)
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--manifest", required=True, help="CSV do make_clean_manifest.py")
+    ap.add_argument("--out-dir", required=True, help="Pasta de saída p/ splits (symlinks)")
+    ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--labels-from-folders", nargs=2, metavar=("POS_DIR","NEG_DIR"),
+                    help="Inferir rótulos a partir de pastas antigas (positives, negatives)")
+    ap.add_argument("--label-from-tsv", action="store_true", help="Inferir rótulos do TSV (AHI simples)")
+    ap.add_argument("--ahi-threshold", type=float, default=5.0, help="Threshold AHI p/ label=1 (default=5.0)")
+    args = ap.parse_args()
+
+    out_base = pathlib.Path(args.out_dir)
+    df = pd.read_csv(args.manifest)
+
+    # labeling
+    if args.labels_from_folders:
+        pos_dir = pathlib.Path(args.labels_from_folders[0])
+        neg_dir = pathlib.Path(args.labels_from_folders[1])
+        df = infer_labels_from_folders(df, pos_dir, neg_dir)
+        mode = "folders"
+    elif args.label_from_tsv:
+        df = infer_labels_from_tsv(df, args.ahi_threshold)
+        mode = f"tsv(ahi>={args.ahi_threshold})"
+    else:
+        df["label"] = -1  # unlabeled
+        mode = "unlabeled"
+
+    print(f"🧾 Manifest: {len(df)} linhas | labeling={mode}")
+    if df["label"].isna().any():
+        n_nan = int(df["label"].isna().sum())
+        print(f"⚠️  {n_nan} sem label (excluídos do split supervisionado).")
+
+    # supervisionado?
+    labeled = df[df["label"].isin([0,1])].copy()
+    unlabeled = df[df["label"].eq(-1)].copy()
+
+    if len(labeled) == 0:
+        # só criar visão "all"
+        for _, r in df.iterrows():
+            for ext in ("edf_path","tsv_path"):
+                src = pathlib.Path(r[ext])
+                dst = out_base / "all" / pathlib.Path(r[ext]).name
+                symlink(src, dst)
+        print(f"✅ Symlinks criados em {out_base/'all'} (sem rótulos).")
+        return
+
+    # split 80/10/10 estratificado
+    train, temp = train_test_split(
+        labeled, test_size=0.2, stratify=labeled["label"], random_state=args.seed
+    )
+    val, test = train_test_split(
+        temp, test_size=0.5, stratify=temp["label"], random_state=args.seed
+    )
+
+    def link_block(block: pd.DataFrame, subset: str):
+        for _, r in block.iterrows():
+            sublab = "positives" if r["label"]==1 else "negatives"
+            edf_dst = out_base / subset / sublab / pathlib.Path(r["edf_path"]).name
+            tsv_dst = out_base / subset / sublab / pathlib.Path(r["tsv_path"]).name
+            symlink(pathlib.Path(r["edf_path"]), edf_dst)
+            symlink(pathlib.Path(r["tsv_path"]), tsv_dst)
+
+    link_block(train, "train")
+    link_block(val,   "val")
+    link_block(test,  "test")
+
+    print(f"✅ Splits criados em: {out_base}")
+    print(f"   Train={len(train)} | Val={len(val)} | Test={len(test)}")
+    print(f"   Pos(train)={int((train['label']==1).sum())}  Neg(train)={int((train['label']==0).sum())}")
+    print(f"   Pos(val)  ={int((val['label']==1).sum())}    Neg(val)  ={int((val['label']==0).sum())}")
+    print(f"   Pos(test) ={int((test['label']==1).sum())}   Neg(test) ={int((test['label']==0).sum())}")
+
+    if len(unlabeled):
+        # opcional: criar visão "unlabeled/all" para exploração
+        for _, r in unlabeled.iterrows():
+            for ext in ("edf_path","tsv_path"):
+                src = pathlib.Path(r[ext])
+                dst = out_base / "unlabeled" / "all" / pathlib.Path(r[ext]).name
+                symlink(src, dst)
+        print(f"ℹ️  Também criei uma pasta {out_base/'unlabeled'/'all'} com os não rotulados.")
+
+if __name__ == "__main__":
+    main()

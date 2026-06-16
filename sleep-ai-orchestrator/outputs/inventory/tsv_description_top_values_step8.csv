@@ -1,0 +1,201 @@
+description,count
+Sleep stage N2,105691
+Sleep stage N3,65178
+Sleep stage W,46552
+Sleep stage R,46210
+Sleep stage ?,26597
+Oxygen Desaturation,17690
+EEG arousal,10970
+Oximeter Event,10952
+Sleep stage N1,9053
+Obstructive Hypopnea,3956
+Limb Movement,3190
+Sleep stage 2,2241
+Gain/Filter Change,2052
+move,1779
+Body Position: Supine,1654
+Obstructive Apnea,1549
+Sleep stage 3,1117
+Montage:Channel Test Referential,1034
+Body Position: Right,1028
+Hypopnea,984
+Body Position: Left,937
+Montage:NCH_PSG_STANDARD,792
+Impedance at 10 kOhm,686
+Central Apnea,647
+Started Analyzer - Sleep Events,429
+Started Analyzer - ECG,428
+"Montage:NCH_PSG_STANDARD, Ref",398
+Body Position: Prone,379
+Video Recording ON,331
+Started Analyzer - Data Trends,309
+Lights Off,302
+Lights On,301
+Stopped Analyzer - Data Trends,283
+movement,282
+Start Recording,277
+Montage:NCH Standard with TcCO2_NDx,276
+Stopped Analyzer - Sleep Events,266
+Body Position: Upright,234
+Off,220
+Mixed Apnea,207
+"Montage:NCH Standard with TcCO2_NDx, Ref",144
+XXX,139
+Soft Snoring,117
+Hold Breath,117
+crying,109
+Breakout box disconnected.,106
+Sleep stage 1,102
+cbg,97
+Breakout box reconnected.,96
+Recording Analyzer - ECG,92
+soft snores,92
+eyes open,88
+Eyes Open,88
+eyes closed,84
+Artifact,81
+SNORES,80
+Eyes Closed,80
+awake,78
+cough,78
+Roll Eyes Down,77
+Roll Eyes Up,76
+stretching,75
+CBG,75
+Roll Eyes Right,73
+Flex RT Foot,73
+Blinks,72
+Flex LT Foot,72
+Roll Eyes Left,70
+tech out,68
+Video Recording OFF,67
+moving,67
+Impedance at 20 kOhm,66
+Nasal Breathing,65
+Oral Breathing,63
+Headbox Reconnected,62
+Close Eyes,61
+Flex Right Leg,61
+Snore or Humm,59
+Flex Left Leg,59
+cry,58
+Open Eyes,57
+Look Down,57
+Blink,57
+PATIENT MOVING,57
+EYES CLOSED,56
+Look Up,56
+Look Left,53
+Look Right,53
+Chewing Mostion,53
+leg movement,53
+Impedance at 5 kOhm,52
+Oral Breath,50
+TECH OUT,50
+Periodic Breathing,50
+Open Eyes (30 seconds),48
+Nasal Breath,48
+chew gum,47
+Close Eyes (30 seconds),46
+tech in,46
+mvmt,45
+Stop Recording,43
+coughing,43
+Eyes Up and Down X5,42
+Simulate Snore or Hum (5 seconds),42
+Deep Breath,42
+Eye Blinks X5,41
+Grit Teeth or Chew (5 seconds),41
+Breath Hold (10 seconds),41
+MOVE,41
+Flex Left Foot,40
+Flex Right Foot,40
+Eyes Left and Right X5,37
+Oral Breathing (10 seconds),37
+Swallow,37
+RAT,36
+Nasal Breathing (10 seconds),36
+so,34
+central,33
+BREATH HOLD,32
+LAT,32
+sleep onset,31
+Normal Breathing,31
+EYES OPEN,30
+REM,29
+Hold still,29
+Good Night,29
+CBG STICK,29
+regained sleep,28
+EYES UP AND DOWN,28
+Moderate Snoring,28
+snore,28
+"Calibration, EtCO2",28
+EYES LT TO RT,27
+BLINKS,27
+NOSE BREATHING,26
+HOB flat 1 pillow,26
+desat 89,26
+chew,26
+yawn,26
+BIO CALS START,25
+breath hold,25
+desat 87,25
+MOUTH BREATHING,24
+mouth breathing,24
+desat 92,24
+Pt moving,24
+leg movements,24
+CHEWS,23
+rem,23
+PT MOVING,23
+tech in adjusting cannula,22
+gasp,22
+mom coughing,22
+loud snores,22
+PVC,22
+Loud Snoring,21
+Sit Up,21
+shaking head,21
+snores,20
+mvmnt,20
+sigh,19
+blinks,18
+Impedance at 25 kOhm,18
+snort/gasp,18
+bed flat for biocals eyes open,17
+eyes closed up and down,17
+nasal breathing,17
+biocals done,17
+Recording Analyzer - Sleep Events,17
+cbg stick,16
+left foot flex,16
+right foot flex,16
+eyes closed left and right,16
+Montage:NCH_PSG_STANDARD [01],16
+hob flat 1 pillow,16
+s.o.,16
+soft snoring,15
+oral breathing,15
+snoring,15
+wiggle,15
+desat 90,14
+hands to face,14
+chewing,14
+snort,14
+Tech out,14
+Stopped Analyzer - ECG,14
+bed flat controls locked one pillow in use,13
+kicking,13
+BIO CALS END,13
+talking,13
+PATIENT COUGHING,13
+noise in room,13
+BIO CAL END,13
+sitting up,13
+CBG stick,13
+Tech in,13
+Room Air,13
+moan,13
+mom making noise,13
+ro,12

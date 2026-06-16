@@ -1,0 +1,110 @@
+\chapter{Implementation and Experimentation Appendix}
+
+\section{Experiment tracking minimum specification}
+Each experiment run should store a compact metadata record to guarantee reproducibility and reviewability:
+\begin{itemize}[leftmargin=1.2cm]
+    \item run ID and timestamp;
+    \item code version (commit hash);
+    \item dataset/split manifest version;
+    \item feature contract version;
+    \item model configuration and random seed;
+    \item validation and test metrics;
+    \item threshold and calibration variant.
+\end{itemize}
+
+The purpose is methodological traceability. When results change, the reason should be recoverable from records rather than from manual recollection.
+
+\section{Data contract and lineage summary}
+The DL phase should preserve lineage from raw input to model-ready tensors. A minimal lineage chain includes source file ID, preprocessing version, quality-gate decision, windowing policy, and linkage key to tabular clinical context.
+
+This is particularly important for error analysis. If a result degrades, lineage makes it possible to identify whether the change came from data preparation, split definitions, or model configuration.
+
+\section{Ablation and error-analysis protocol}
+Ablations should quantify the contribution of each modality and each major modeling choice. Minimum recommended ablations:
+\begin{itemize}[leftmargin=1.2cm]
+    \item temporal-only;
+    \item tabular-only;
+    \item multimodal fusion;
+    \item with vs. without calibration;
+    \item with vs. without uncertainty routing.
+\end{itemize}
+
+For clinical review, errors should be grouped into a concise taxonomy:
+\begin{itemize}[leftmargin=1.2cm]
+    \item false negatives with high symptom burden;
+    \item false negatives with low signal quality;
+    \item false positives linked to transient artifact patterns;
+    \item uncertain predictions near threshold.
+\end{itemize}
+
+This keeps model analysis aligned with practical triage decisions.
+
+\section{Initial DL search space (bounded)}
+To keep experimentation tractable, the initial search should remain bounded and reproducible. A practical first-pass grid includes:
+\begin{itemize}[leftmargin=1.2cm]
+    \item learning rate: \{1e-4, 3e-4, 1e-3\};
+    \item weight decay: \{1e-5, 1e-4, 1e-3\};
+    \item batch size: \{32, 64, 128\};
+    \item dropout: \{0.1, 0.2, 0.3\};
+    \item temporal depth: \{4, 6, 8 blocks\};
+    \item fusion hidden size: \{128, 256, 512\};
+    \item loss type: weighted BCE vs focal.
+\end{itemize}
+
+The search should be staged rather than fully combinatorial. Narrowing by stability before broad sweeps reduces both variance and compute waste.
+
+\section{Literature support matrix (condensed)}
+Table \ref{tab:lit_matrix} summarizes representative references used to support claims in Chapters 2 and 6.
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\caption{Condensed literature matrix: methodological and clinical relevance.}
+\label{tab:lit_matrix}
+\begin{tabular}{p{2.7cm}p{1.1cm}p{1.6cm}p{2.2cm}p{7.8cm}}
+\toprule
+Reference & Year & Type & Data Modality & Relevance to this dissertation \\
+\midrule
+Xu et al. & 2019 & Article & Oximetry + cloud pipeline & Pediatric OSA ML feasibility and operational context for screening-oriented pipelines. \\
+Gutierrez-Tobal et al. & 2022 & Meta-analysis & Mixed pediatric datasets & Highlights heterogeneity and the need for reproducible validation designs. \\
+Breiman & 2001 & Method paper & Tabular ML & Basis for random forest baseline rationale. \\
+Chen and Guestrin & 2016 & Method paper & Gradient boosting & Basis for XGBoost baseline design and comparison. \\
+Guo et al. & 2017 & Method paper & Calibration & Supports probability calibration analysis beyond discrimination metrics. \\
+Baltrusaitis et al. & 2019 & Survey & Multimodal ML & Conceptual basis for multimodal fusion strategy. \\
+Berry et al. (AASM) & 2023 & Standard & PSG scoring & Clinical ground truth reference for event definition and interpretation. \\
+Solano-Perez et al. & 2023 & Review & Pediatric clinical pathways & Clinical framing of pediatric OSA diagnosis constraints and triage needs. \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{Scope note for final submission}
+The appendix intentionally focuses on reproducibility controls and evaluation discipline. It does not claim that synthetic pilot outcomes are equivalent to clinical validation. Real-data multimodal DL closure remains future work.
+
+\section{Ethical and regulatory minimum checklist}
+For pediatric clinical-AI research context, the final manuscript should keep an explicit checklist covering:
+\begin{enumerate}[leftmargin=1.2cm]
+    \item intended use statement and non-autonomous role;
+    \item population scope and exclusion criteria;
+    \item data minimization and pseudonymization approach;
+    \item subgroup-performance and fairness review plan;
+    \item update-policy statement for future model revisions.
+\end{enumerate}
+
+Including this checklist does not imply deployment approval. It documents that methodological reporting is aligned with expected clinical-research standards.
+
+\section{Minimum reporting template for final DL chapter}
+When real-data DL closure is completed, the final chapter should follow a stable reporting template to avoid selective emphasis. A concise structure is:
+\begin{enumerate}[leftmargin=1.2cm]
+    \item protocol recap (data split, preprocessing version, model configuration);
+    \item primary and secondary metrics on validation and test;
+    \item calibration summary (Brier, ECE, reliability plot statement);
+    \item ablation summary (temporal-only, tabular-only, fusion);
+    \item subgroup results with explicit caveats for small groups;
+    \item error taxonomy summary with clinically relevant examples;
+    \item limitations and unresolved risks.
+\end{enumerate}
+
+This template helps maintain scientific honesty when results are mixed. Positive findings can be interpreted with context, and negative findings can still be integrated as methodological evidence. In a dissertation setting, this is preferable to only presenting best-case outcomes from selected runs.
+
+It also supports supervisor review cycles because each revision can be compared section-by-section. If a metric changes, the surrounding protocol fields make it possible to trace why. This keeps the final write-up consistent with the core contribution of the project: reproducible, leakage-aware, and clinically grounded model evaluation.

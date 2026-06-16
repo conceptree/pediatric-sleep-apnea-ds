@@ -1,0 +1,225 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{American Academy of Sleep Medicine}(2023)]{berry2023}
+{American Academy of Sleep Medicine}.
+\newblock \emph{The AASM Manual for the Scoring of Sleep and Associated Events:
+  Rules, Terminology and Technical Specifications}.
+\newblock American Academy of Sleep Medicine, version 3.0 edition, 2023.
+
+\bibitem[Baltrusaitis et~al.(2019)Baltrusaitis, Ahuja, and
+  Morency]{baltrusaitis2019multimodal}
+T.~Baltrusaitis, C.~Ahuja, and L.-P. Morency.
+\newblock Multimodal machine learning: A survey and taxonomy.
+\newblock \emph{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}, 41\penalty0 (2):\penalty0 423--443, 2019.
+\newblock \doi{10.1109/TPAMI.2018.2798607}.
+
+\bibitem[Beebe(2006)]{beebe2006}
+D.~W. Beebe.
+\newblock Neurobehavioral morbidity associated with disordered breathing during
+  sleep in children: A comprehensive review.
+\newblock \emph{Sleep}, 29\penalty0 (9):\penalty0 1115--1134, 2006.
+\newblock \doi{10.1093/sleep/29.9.1115}.
+
+\bibitem[Beebe et~al.(2010)Beebe, Wells, Jeffries, et~al.]{beebe2010}
+D.~W. Beebe, C.~T. Wells, J.~Jeffries, et~al.
+\newblock Cognitive and behavioral consequences of sleep disordered breathing
+  in children.
+\newblock \emph{Pediatric Pulmonology}, 45\penalty0 (10):\penalty0 1027--1036,
+  2010.
+\newblock \doi{10.1002/ppul.21256}.
+
+\bibitem[Biswal et~al.(2018)Biswal, Sun, Goparaju,
+  et~al.]{biswal2018sleeptransformer}
+S.~Biswal, H.~Sun, B.~Goparaju, et~al.
+\newblock Sleepnet: Automated sleep staging system via deep learning.
+\newblock \emph{arXiv preprint arXiv:1707.08262}, 2018.
+
+\bibitem[Breiman(2001)]{breiman2001rf}
+L.~Breiman.
+\newblock Random forests.
+\newblock \emph{Machine Learning}, 45\penalty0 (1):\penalty0 5--32, 2001.
+\newblock \doi{10.1023/A:1010933404324}.
+
+\bibitem[Chang et~al.(2013)Chang, Wu, and Cao]{chang2013}
+L.~Chang, J.~Wu, and L.~Cao.
+\newblock Combination of symptoms and oxygen desaturation index in predicting
+  childhood obstructive sleep apnea.
+\newblock \emph{International Journal of Pediatric Otorhinolaryngology},
+  77\penalty0 (3):\penalty0 365--371, 2013.
+\newblock \doi{10.1016/j.ijporl.2012.11.028}.
+
+\bibitem[Chen and Guestrin(2016)]{chen2016xgb}
+T.~Chen and C.~Guestrin.
+\newblock Xgboost: A scalable tree boosting system.
+\newblock In \emph{Proceedings of the 22nd ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, pages 785--794, 2016.
+\newblock \doi{10.1145/2939672.2939785}.
+
+\bibitem[Deshpande et~al.(2022)Deshpande, Salcedo, and Haq]{deshpande2022}
+P.~Deshpande, B.~Salcedo, and C.~Haq.
+\newblock Common sleep disorders in children.
+\newblock \emph{American Family Physician}, 105\penalty0 (2):\penalty0
+  168--176, 2022.
+
+\bibitem[Gozal(1998)]{gozal2008}
+D.~Gozal.
+\newblock Sleep-disordered breathing and school performance in children.
+\newblock \emph{Pediatrics}, 102\penalty0 (3):\penalty0 616--620, 1998.
+\newblock \doi{10.1542/peds.102.3.616}.
+
+\bibitem[Gupta and Sharma(2024)]{gupta2024}
+S.~Gupta and R.~Sharma.
+\newblock Pediatric obstructive sleep apnea: Diagnostic challenges and
+  management strategies.
+\newblock \emph{Cureus}, 16\penalty0 (12):\penalty0 e75347, 2024.
+\newblock \doi{10.7759/cureus.75347}.
+
+\bibitem[Gutierrez-Tobal et~al.(2022)Gutierrez-Tobal, Alvarez,
+  Kheirandish-Gozal, et~al.]{gutierrez2022systematic}
+G.~C. Gutierrez-Tobal, D.~Alvarez, L.~Kheirandish-Gozal, et~al.
+\newblock Reliability of machine learning to diagnose pediatric obstructive
+  sleep apnea: Systematic review and meta-analysis.
+\newblock \emph{Pediatric Pulmonology}, 57\penalty0 (12):\penalty0 3079--3092,
+  2022.
+\newblock \doi{10.1002/ppul.26154}.
+
+\bibitem[Hannun et~al.(2019)Hannun, Rajpurkar, Haghpanahi,
+  et~al.]{hannun2019cardiology}
+A.~Y. Hannun, P.~Rajpurkar, M.~Haghpanahi, et~al.
+\newblock Cardiologist-level arrhythmia detection and classification in
+  ambulatory electrocardiograms using a deep neural network.
+\newblock \emph{Nature Medicine}, 25:\penalty0 65--69, 2019.
+\newblock \doi{10.1038/s41591-018-0268-3}.
+
+\bibitem[Lee et~al.(2022)Lee, Li, DeForte, et~al.]{lee2022scidata}
+H.~Lee, B.~Li, S.~DeForte, et~al.
+\newblock A large collection of real-world pediatric sleep studies.
+\newblock \emph{Scientific Data}, 9:\penalty0 421, 2022.
+\newblock \doi{10.1038/s41597-022-01545-6}.
+
+\bibitem[Lee et~al.(2021)Lee, Li, Huang, Chi, and Lin]{nchdatabankphysionet}
+Harlin Lee, Boyue Li, Yungui Huang, Yuejie Chi, and Simon Lin.
+\newblock Nch sleep databank: A large collection of real-world pediatric sleep
+  studies with longitudinal clinical data (version 3.1.0), 2021.
+\newblock URL \url{https://physionet.org/content/nch-sleep/3.1.0/}.
+\newblock RRID:SCR\_007345, Accessed 2026-05-17.
+
+\bibitem[Liang et~al.(2022)Liang, Zheng, Zhang, et~al.]{liang2022multimodal}
+Y.~Liang, R.~Zheng, C.~Zhang, et~al.
+\newblock Multimodal learning for healthcare: A survey.
+\newblock \emph{Information Fusion}, 84:\penalty0 158--177, 2022.
+\newblock \doi{10.1016/j.inffus.2022.03.007}.
+
+\bibitem[Lundberg and Lee(2017)]{lundberg2017shap}
+S.~M. Lundberg and S.-I. Lee.
+\newblock A unified approach to interpreting model predictions.
+\newblock \emph{Advances in Neural Information Processing Systems}, 30, 2017.
+
+\bibitem[Meltzer et~al.(2011)Meltzer, Johnson, Crosette, Ramos, and
+  Mindell]{meltzer2011}
+L.~J. Meltzer, C.~Johnson, J.~Crosette, M.~Ramos, and J.~A. Mindell.
+\newblock Epidemiology of sleep disorders in children.
+\newblock \emph{Sleep Medicine Clinics}, 6\penalty0 (1):\penalty0 1--15, 2011.
+\newblock \doi{10.1016/j.jsmc.2010.12.002}.
+
+\bibitem[Mostafa et~al.(2019)Mostafa, Mendonca, Ravelo-Garcia, and
+  Morgado-Dias]{mostafa2019sleepedf}
+S.~S. Mostafa, F.~Mendonca, A.~G. Ravelo-Garcia, and F.~Morgado-Dias.
+\newblock Sleep stage classification using deep learning.
+\newblock \emph{IEEE Access}, 7:\penalty0 82512--82522, 2019.
+\newblock \doi{10.1109/ACCESS.2019.2922182}.
+
+\bibitem[Paruthi et~al.(2016)Paruthi, Brooks, D'Ambrosio, et~al.]{paruthi2018}
+S.~Paruthi, L.~J. Brooks, C.~D'Ambrosio, et~al.
+\newblock Recommended amount of sleep for pediatric populations: A consensus
+  statement of the american academy of sleep medicine.
+\newblock \emph{Journal of Clinical Sleep Medicine}, 12\penalty0 (6):\penalty0
+  785--786, 2016.
+\newblock \doi{10.5664/jcsm.5866}.
+
+\bibitem[Qin et~al.(2024)Qin, Zhang, Li, et~al.]{qin2024lda}
+H.~Qin, L.~Zhang, X.~Li, et~al.
+\newblock Pediatric obstructive sleep apnea diagnosis: leveraging machine
+  learning with linear discriminant analysis.
+\newblock \emph{Frontiers in Pediatrics}, 12:\penalty0 1408780, 2024.
+\newblock \doi{10.3389/fped.2024.1408780}.
+
+\bibitem[Rundo and Downey(2019)]{rundo2019}
+J.~V. Rundo and R.~III Downey.
+\newblock Polysomnography.
+\newblock In \emph{Handbook of Clinical Neurology}, volume 160, pages 381--392.
+  Elsevier, 2019.
+\newblock \doi{10.1016/B978-0-444-64032-1.00025-4}.
+
+\bibitem[Solano-Perez et~al.(2023)Solano-Perez, Coso, Castillo-Garcia,
+  et~al.]{solano2023}
+E.~Solano-Perez, C.~Coso, M.~Castillo-Garcia, et~al.
+\newblock Diagnosis and treatment of sleep apnea in children: A future
+  perspective is needed.
+\newblock \emph{Biomedicines}, 11\penalty0 (6):\penalty0 1708, 2023.
+\newblock \doi{10.3390/biomedicines11061708}.
+
+\bibitem[Sproson et~al.(2010)Sproson, Hogan, and Hill]{sproson2009}
+E.~L. Sproson, A.~M. Hogan, and C.~M. Hill.
+\newblock Accuracy of clinical assessment of paediatric obstructive sleep
+  apnoea in two english centres.
+\newblock \emph{The Journal of Laryngology \& Otology}, 124\penalty0
+  (3):\penalty0 321--327, 2010.
+\newblock \doi{10.1017/S002221510999176X}.
+
+\bibitem[Vaquerizo-Villar et~al.(2021)Vaquerizo-Villar, Alvarez,
+  Kheirandish-Gozal, et~al.]{vaquerizo2021cnn}
+F.~Vaquerizo-Villar, D.~Alvarez, L.~Kheirandish-Gozal, et~al.
+\newblock A convolutional neural network architecture to enhance oximetry
+  ability to diagnose pediatric obstructive sleep apnea.
+\newblock \emph{IEEE Journal of Biomedical and Health Informatics}, 25\penalty0
+  (8):\penalty0 2906--2916, 2021.
+\newblock \doi{10.1109/JBHI.2021.3051440}.
+
+\bibitem[Vlahandonis et~al.(2013)Vlahandonis, Nixon, Davey, Walter, and
+  Horne]{vlahandonis2013}
+A.~Vlahandonis, G.~M. Nixon, M.~J. Davey, L.~M. Walter, and R.~S.~C. Horne.
+\newblock A four year follow-up of sleep and respiratory measures in elementary
+  school-aged children with sleep disordered breathing.
+\newblock \emph{Sleep Medicine}, 14\penalty0 (5):\penalty0 440--448, 2013.
+\newblock \doi{10.1016/j.sleep.2013.01.008}.
+
+\bibitem[{Wikimedia Commons
+  contributors}(2026{\natexlab{a}})]{wikipediatricpsg}
+{Wikimedia Commons contributors}.
+\newblock File:pediatric polysomnogram.jpg, 2026{\natexlab{a}}.
+\newblock URL
+  \url{https://commons.wikimedia.org/wiki/File:Pediatric_polysomnogram.jpg}.
+\newblock Open-license media on Wikimedia Commons, accessed 2026-05-17.
+
+\bibitem[{Wikimedia Commons
+  contributors}(2026{\natexlab{b}})]{wikipsgconnections}
+{Wikimedia Commons contributors}.
+\newblock File:polysomnography connections.jpg, 2026{\natexlab{b}}.
+\newblock URL
+  \url{https://commons.wikimedia.org/wiki/File:Polysomnography_connections.jpg}.
+\newblock Open-license media on Wikimedia Commons, accessed 2026-05-17.
+
+\bibitem[Xu et~al.(2019)Xu, Gutierrez-Tobal, Wu, et~al.]{xu2019cloud}
+Z.~Xu, G.~C. Gutierrez-Tobal, Y.~Wu, et~al.
+\newblock Cloud algorithm-driven oximetry-based diagnosis of obstructive sleep
+  apnoea in symptomatic habitually snoring children.
+\newblock \emph{European Respiratory Journal}, 53\penalty0 (2):\penalty0
+  1801788, 2019.
+\newblock \doi{10.1183/13993003.01788-2018}.
+
+\bibitem[Ye et~al.(2023)Ye, Qin, Zhan, et~al.]{ye2023xgboost}
+P.~Ye, H.~Qin, X.~Zhan, et~al.
+\newblock Diagnosis of obstructive sleep apnea in children based on the xgboost
+  algorithm using nocturnal heart rate and blood oxygen feature.
+\newblock \emph{American Journal of Otolaryngology}, 44\penalty0 (2):\penalty0
+  103714, 2023.
+\newblock \doi{10.1016/j.amjoto.2022.103714}.
+
+\end{thebibliography}

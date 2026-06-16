@@ -1,0 +1,19 @@
+manifest_csv: /Volumes/CORSAIR/tese/sleep-ai-orchestrator/outputs/inventory/paired_sleep_records_step4_splits.csv
+demographic_csv: /Volumes/CORSAIR/tese/datasets/nch-sleep/all_raw/Health_Data/DEMOGRAPHIC.csv
+sleep_study_csv: /Volumes/CORSAIR/tese/datasets/nch-sleep/all_raw/Health_Data/SLEEP_STUDY.csv
+demographic_encoding_used: utf-8-sig
+sleep_study_encoding_used: utf-8-sig
+
+manifest_unique_patients: 1694
+manifest_unique_sleep_study_ids: 1833
+
+coverage_patient_in_demographic: 1694/1694 (100.00%)
+coverage_patient_in_sleep_study: 1694/1694 (100.00%)
+coverage_sleep_study_id_in_sleep_study: 1833/1833 (100.00%)
+
+missing_patient_in_demographic_count: 0
+missing_patient_in_demographic_sample: []
+missing_patient_in_sleep_study_count: 0
+missing_patient_in_sleep_study_sample: []
+missing_sleep_study_id_in_sleep_study_count: 0
+missing_sleep_study_id_in_sleep_study_sample: []

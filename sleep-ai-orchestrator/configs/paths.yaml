@@ -1,0 +1,4 @@
+data_root: "/Volumes/CORSAIR/tese/datasets/nch-sleep/all_raw"
+sleep_data_dir: "/Volumes/CORSAIR/tese/datasets/nch-sleep/all_raw/Sleep_Data"
+health_data_dir: "/Volumes/CORSAIR/tese/datasets/nch-sleep/all_raw/Health_Data"
+outputs_dir: "/Volumes/CORSAIR/tese/sleep-ai-orchestrator/outputs"

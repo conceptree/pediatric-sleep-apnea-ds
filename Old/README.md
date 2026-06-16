@@ -66,3 +66,20 @@ The goal of this thesis is to explore how machine learning models can be trained
 └── README.md           # This file
 # pediatric-sleep-apnea-ds
 ISCTE Data Science academic project that studies the application of ML to support pediatric sleep apneas diagnosis.
+
+# Study Related Information
+
+## Channels mapping in Polysomnography
+
+| Group                    | Example Names (in EDF)                                                        | Main Clinical Function                                         | Used in Sleep Apnea Diagnosis                               |
+| ------------------------ | ----------------------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------------------- |
+| **EEG**                  | `C3-M2`, `C4-M1`, `F3-M2`, `F4-M1`, `O1-M2`, `O2-M1`, `CZ-O1`                 | Sleep staging (NREM, REM), micro-arousals, arousals            | Indirect (sleep classification and arousals, not in AHI)    |
+| **EOG**                  | `LOC-M2`, `ROC-M1`                                                            | Eye movements → identify REM                                   | Indirect (required for REM staging)                         |
+| **EMG**                  | `Chin1-Chin2`, `EMG Chin`, `LLEG`, `RLEG`                                     | Muscle tone (chin for REM, legs for PLMS)                      | Indirect (PLMS, sleep fragmentation criterion)              |
+| **ECG**                  | `ECG LA-RA`, `ECG EKG2-EKG`                                                   | Heart rhythm, HR, HRV                                          | Complementary (tachycardia/bradycardia associated with apneas) |
+| **Respiration – flow**   | `Resp Flow`, `Resp Airflow`, `Flow_DR`, `XFlow`, `PTAF`, `C-Flow`, `Nasal`    | Nasal/oral airflow (apnea/hypopnea detection)                  | ✅ Central to diagnosis                                      |
+| **Respiration – effort** | `Resp Chest`, `Resp Thoracic`, `Resp Abdomen`, `Resp Abdominal`, `C-Pressure` | Respiratory effort (differentiate obstructive vs central apnea)| ✅ Central                                                   |
+| **Snore**                | `Snore`, `Snore_DR`                                                           | Presence of snoring                                            | Complementary (supports obstructive apnea phenotype)         |
+| **SpO₂ (oximetry)**      | `SpO2`, `SaO2`, `Osat`, `O2Sat`, `Oximetry`, `Oximeter`                       | Blood oxygen saturation, desaturations                         | ✅ Essential (ODI, T90, desaturations)                       |
+| **CO₂**                  | `EtCO2`, `TcCO2`, `Capno`                                                     | Capnography (end-tidal) and transcutaneous CO₂ → hypoventilation | Complementary (especially in pediatrics)                     |
+| **Other**                | `Patient Event`, `Rate`, `Tidal Vol`                                          | Manual events or respiratory volumes                           | Support                                                     |

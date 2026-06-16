@@ -1,0 +1,21 @@
+manifest_csv: /Volumes/CORSAIR/tese/sleep-ai-orchestrator/outputs/inventory/paired_sleep_records_step4_splits.csv
+tsv_total_in_manifest: 1833
+sample_size_requested: 200
+sample_size_effective: 200
+unreadable_count: 0
+
+encodings_used:
+  utf-8-sig: 200
+
+distinct_header_schemas: 1
+top_header_schemas:
+  1. count=200
+     header=onset|duration|description
+
+top_columns:
+   200 onset
+   200 duration
+   200 description
+
+candidate_target_like_columns:
+  (none found in sampled TSV headers)

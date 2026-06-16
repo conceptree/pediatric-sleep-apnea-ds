@@ -1,0 +1,30 @@
+input_csv: /Volumes/CORSAIR/tese/sleep-ai-orchestrator/outputs/inventory/baseline_matrix_step10.csv
+train_rows: 1291
+val_rows: 269
+test_rows: 273
+train_positive_rate: 0.104570
+
+baseline_A_majority:
+  learned_majority_class: 0
+  val_accuracy: 0.914498
+  val_balanced_accuracy: 0.500000
+  val_f1: 0.000000
+  val_tp_fp_tn_fn: 0,0,246,23
+  test_accuracy: 0.893773
+  test_balanced_accuracy: 0.500000
+  test_f1: 0.000000
+  test_tp_fp_tn_fn: 0,0,244,29
+
+baseline_B_threshold_on_oxygen_desaturation:
+  feature: feature_n_oxygen_desaturation
+  selected_threshold_from_train: 65
+  train_balanced_accuracy: 0.818794
+  train_f1: 0.477612
+  val_accuracy: 0.802974
+  val_balanced_accuracy: 0.754330
+  val_f1: 0.376471
+  val_tp_fp_tn_fn: 16,46,200,7
+  test_accuracy: 0.813187
+  test_balanced_accuracy: 0.819531
+  test_f1: 0.484848
+  test_tp_fp_tn_fn: 24,46,198,5

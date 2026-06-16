@@ -1,0 +1,129 @@
+\chapter{Extended Theoretical and Technical Development}
+
+\section{Clinical pathway and decision point}
+In pediatric sleep medicine, delay is usually cumulative rather than caused by one failure point. Referral quality, scheduling limits, variable symptom reporting, and specialist workload all contribute. Within this setting, the model target in this dissertation is intentionally narrow: pre-diagnostic risk stratification to support prioritization. It is not autonomous diagnosis.
+
+That distinction matters for interpretation of results. A model can be useful before it is perfect if it helps clinics sort cases more consistently and reduces avoidable waiting time for children with higher risk profiles. The clinical contribution proposed here is therefore assistive and operational: improve triage quality while preserving specialist judgment.
+
+\section{Methodological controls under imbalance}
+Class imbalance is central in this dataset and directly affects model selection. For this reason, balanced accuracy was pre-specified as the primary metric and F1 as tie-breaker. This avoids selecting models that appear strong because they mostly predict the majority class.
+
+Two additional controls are key. First, model-selection rules were fixed before final comparison to reduce post-hoc metric shopping. Second, thresholds were tuned on validation and then evaluated on a held-out test set. Together, these controls keep the baseline claims conservative and reproducible.
+
+Calibration results reinforce a practical point: better probability alignment does not always translate into better thresholded classification under a fixed policy. This is why discrimination and probability quality are both reported.
+
+\section{Leakage prevention as a core contribution}
+Leakage risk is substantial in sleep-related prediction tasks. If predictors carry direct or near-direct information about the label definition, apparent performance can be inflated and clinically misleading. The baseline pipeline mitigates this through an explicit exclusion list and a restricted leakage-safe feature set.
+
+Patient-grouped splitting is the second safeguard. Without it, repeated patient patterns across train and test could create optimistic estimates that fail at deployment. In this dissertation, grouped splitting is treated as mandatory methodology, not optional implementation detail.
+
+These decisions limit headline performance but increase credibility. For an MSc dissertation with translational intent, this trade-off is scientifically preferable to maximizing optimistic metrics.
+
+\section{Deep learning extension: scope and current status}
+The DL component is deliberately presented as in progress. At the time of writing:
+\begin{itemize}[leftmargin=1.2cm]
+    \item the architecture and training protocol are defined;
+    \item implementation controls are specified (split integrity, ablations, calibration checks);
+    \item synthetic pilot experiments were run for engineering validation;
+    \item full real-data closure is pending.
+\end{itemize}
+
+This status boundary is important. Synthetic pilot outputs are used to test code paths, compare design variants under controlled perturbations, and set provisional targets. They are not clinical evidence.
+
+\section{Architecture rationale and expected value}
+The proposed multimodal design combines three branches: temporal PSG, clinical-history tabular variables, and event-summary features from MVP v1. The rationale is not novelty for its own sake. It is robustness across practical data conditions.
+
+Temporal signals may capture dynamics lost in aggregated counts. Clinical-history variables provide context that temporal channels alone may not encode. Event-summary features offer continuity with the validated baseline and can remain informative when waveform quality is variable.
+
+Late fusion keeps the system modular. This facilitates ablation, debugging, and communication to clinicians about which information source contributes to a prediction.
+
+\section{Synthetic pilot interpretation}
+Synthetic experiments were designed to approximate class imbalance, noise, and missingness patterns relevant to this project. They support engineering questions such as training stability and branch interaction.
+
+Their limits are explicit. Synthetic data cannot reproduce latent physiology, annotation bias, or center-specific acquisition artifacts. Therefore, synthetic ranges in this dissertation are reported as provisional and are not interpreted as evidence of clinical utility.
+
+\section{Evaluation priorities for the closure phase}
+For real-data DL closure, the priority is not a single headline metric. A credible evaluation should include:
+\begin{itemize}[leftmargin=1.2cm]
+    \item discrimination metrics under fixed split rules;
+    \item calibration diagnostics;
+    \item subgroup analyses;
+    \item uncertainty-aware error review, especially false negatives.
+\end{itemize}
+
+This aligns with the thesis framing: decision support for triage rather than automated diagnosis. If uncertainty is high, the correct action may be accelerated specialist review, not forced model confidence.
+
+\section{Interpretability and clinician communication}
+Interpretability is relevant only if it supports real case review. For tabular models, local and global attribution summaries can help clinicians verify whether predictions align with plausible clinical reasoning. For temporal branches, signal-segment visualization can indicate where model attention concentrates.
+
+These tools should be treated as supporting evidence, not proof of mechanism. In practice, unstable explanations can mislead clinical interpretation. For this reason, explanation outputs should be checked for consistency across seeds and small perturbations before being used in case discussions.
+
+A practical case-summary template for specialist review can include:
+\begin{enumerate}[leftmargin=1.2cm]
+    \item predicted risk with confidence range;
+    \item main tabular contributors;
+    \item salient temporal segments;
+    \item calibration bucket and uncertainty flag;
+    \item suggested action category (priority review, routine review, data-quality check).
+\end{enumerate}
+
+\section{Cloud execution rationale and constraints}
+Cloud execution is used here for scalability and reproducibility, not as an end in itself. Managed training jobs, versioned storage, and explicit run metadata simplify controlled iteration when experiments become computationally expensive.
+
+Even so, this infrastructure introduces constraints. Data access policy, auditability, and cost control must be specified before large runs. GPU tiering (for example, L4 for iteration and A100 for targeted sweeps) is a practical compromise between speed and budget.
+
+For dissertation scope, the key point is methodological continuity: every reported run should be traceable to code version, split manifest, and configuration. This matters more than infrastructure breadth.
+
+\section{Threats to validity specific to the DL phase}
+Three threats require explicit monitoring during closure. First, temporal models can overfit patient-specific or acquisition-specific patterns if split discipline weakens. Second, apparent fusion gains may collapse when one modality degrades in quality. Third, calibration behavior can drift under distribution shift even when discrimination remains acceptable.
+
+Mitigation therefore requires paired reporting: performance with and without each modality, calibration diagnostics alongside discrimination, and subgroup checks under consistent protocols. If these checks fail, the correct outcome is to report limits transparently rather than retain overly strong claims.
+
+\section{Threshold policy and operating-point selection}
+Model evaluation and threshold selection should be treated as related but distinct steps. In this project, the model family was selected using balanced accuracy and F1, while operating thresholds were tuned on validation data. For clinical use, however, threshold choice depends on service constraints, referral volume, and tolerance for false negatives.
+
+In practical terms, at least two operating profiles should be documented during closure:
+\begin{itemize}[leftmargin=1.2cm]
+    \item a sensitivity-oriented profile for settings where missed high-risk cases are unacceptable;
+    \item a balanced profile for settings where specialist capacity is limited and false positives carry operational cost.
+\end{itemize}
+
+Both profiles should be reported on the same held-out test split to preserve comparability. This helps avoid post-hoc threshold changes that overfit narrative goals. It also aligns better with the assistive framing of the dissertation, where the objective is to support prioritization under realistic constraints.
+
+For each profile, reporting should include confusion matrix, recall, specificity, precision, F1, balanced accuracy, and calibration indicators. This full set is necessary because single-metric reporting can hide clinically relevant trade-offs. In pediatric triage contexts, apparent gains in one metric may still be unacceptable if concentrated in high-cost error types.
+
+\section{External validation strategy and reproducibility expectations}
+The current baseline evidence is internally robust but still single-source. External validation is therefore a scientific requirement before strong generalization claims. A credible external-validation stage should include at least one independent data slice with different acquisition conditions or annotation practices.
+
+The recommended sequence is conservative. First, freeze the feature contract and model-selection protocol used in the internal study. Second, apply the same preprocessing and split logic to the external slice without retuning core definitions. Third, report both retained performance and drift diagnostics, including class prevalence shift, calibration drift, and subgroup-level deviations.
+
+If performance decreases, the result should be interpreted rather than masked. A moderate drop is informative because it identifies where adaptation is needed: label harmonization, quality-gate revision, recalibration, or architecture adjustments. Negative findings are still scientifically valuable when they are linked to explicit protocol checks.
+
+Reproducibility expectations should also be explicit. At minimum, an external run should be replayable from a versioned manifest, code commit hash, and fixed random seeds. This requirement extends the core contribution of this dissertation: methodological reliability over isolated benchmark claims.
+
+From an MSc perspective, this validation plan is ambitious but still realistic because it builds directly on the existing artifact-oriented pipeline. It does not require reframing the thesis objective; it extends the same conservative logic to a broader evidence setting.
+
+\section{Near-term execution sequence}
+The remaining DL work can be organized into a compact sequence:
+\begin{enumerate}[leftmargin=1.2cm]
+    \item finalize waveform preprocessing and quality gates;
+    \item run temporal-only and fusion ablations on fixed grouped splits;
+    \item compare calibration strategies under the same threshold policy;
+    \item perform subgroup and error-taxonomy review;
+    \item update the dissertation by replacing synthetic ranges with real DL outcomes.
+\end{enumerate}
+
+This sequence preserves scientific clarity: protocol first, evidence second, claims last.
+
+\section{Positioning and realistic MSc scope}
+The scientific contribution of this dissertation is best understood as a staged framework:
+\begin{enumerate}[leftmargin=1.2cm]
+    \item a completed and reproducible leakage-safe baseline with real metrics;
+    \item a technically grounded multimodal DL protocol with synthetic pilot checks;
+    \item a clear plan for real-data closure and external validation.
+\end{enumerate}
+
+This scope is realistic for a master's project. It preserves technical ambition while keeping claims proportional to completed evidence.
+
+\section{Chapter synthesis}
+The validated result is the conservative baseline pipeline and its comparative evidence. The DL component contributes architecture, implementation controls, and synthetic pilot behavior, with real-data verification still pending. Framing the work this way keeps the narrative scientifically honest while still showing a coherent path for continuation.

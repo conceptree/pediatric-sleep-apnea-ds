@@ -1,4 +1,4 @@
-# split_dataset.py
+#!/usr/bin/env python3
 import random
 import shutil
 from pathlib import Path

@@ -1,0 +1,74 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Problem framing}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Research objective and scope}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Research questions}{1}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Contributions}{2}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Literature Review}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Pediatric OSA clinical relevance}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Traditional diagnosis and PSG constraints}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Machine learning in pediatric OSA}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Deep learning and multimodal opportunities}{4}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Gaps identified}{4}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Data and Clinical Context}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Data inventory and pairing}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Patient-grouped split and leakage controls}{5}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Target definition and decision-support framing}{6}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Methodology: MVP v1 Machine Learning Pipeline}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Pipeline architecture}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Baselines and evaluation protocol}{7}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Calibration strategy}{8}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Results: Reproducible Baseline Evidence}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Cross-model comparison}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Calibration outcomes}{9}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Interpretation and practical implications}{10}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Deep Learning Extension: Design for Clinical-History and PSG Fusion}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Motivation for multimodal deep learning}{11}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Proposed multimodal architecture}{11}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Training protocol and controls}{12}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Google Cloud GPU execution plan}{12}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Synthetic pilot (expected-data simulation)}{12}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Synthetic pilot experimental settings}{13}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Synthetic pilot expected outcomes}{13}{section.6.7}%
+\contentsline {chapter}{\numberline {7}Discussion}{14}{chapter.7}%
+\contentsline {section}{\numberline {7.1}What is already validated}{14}{section.7.1}%
+\contentsline {section}{\numberline {7.2}What remains open}{14}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Ethical, legal, and clinical governance}{14}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Threats to validity}{15}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Extended Theoretical and Technical Development}{16}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Clinical pathway analysis and operational bottlenecks}{16}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Methodological choices under class imbalance}{17}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Feature governance and leakage prevention in clinical ML}{18}{section.8.3}%
+\contentsline {section}{\numberline {8.4}From interpretable baselines to multimodal deep learning}{18}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Deep learning architecture details}{19}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Loss functions, optimization, and uncertainty}{19}{section.8.6}%
+\contentsline {section}{\numberline {8.7}Synthetic-data strategy and limitations}{20}{section.8.7}%
+\contentsline {section}{\numberline {8.8}Google Cloud implementation blueprint}{20}{section.8.8}%
+\contentsline {section}{\numberline {8.9}Evaluation framework for clinician-facing utility}{21}{section.8.9}%
+\contentsline {section}{\numberline {8.10}Interpretability and communication to specialists}{21}{section.8.10}%
+\contentsline {section}{\numberline {8.11}Positioning against related work}{22}{section.8.11}%
+\contentsline {section}{\numberline {8.12}Detailed roadmap for the next 12 weeks}{22}{section.8.12}%
+\contentsline {section}{\numberline {8.13}Risk register and mitigation}{23}{section.8.13}%
+\contentsline {section}{\numberline {8.14}Expected thesis-level impact}{24}{section.8.14}%
+\contentsline {section}{\numberline {8.15}Writing guidance for supervisor feedback cycles}{24}{section.8.15}%
+\contentsline {section}{\numberline {8.16}Concluding synthesis of the extended chapter}{24}{section.8.16}%
+\contentsline {chapter}{\numberline {9}Conclusion}{25}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Future Work Plan}{26}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Phase 1: waveform integration and quality gates}{26}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Phase 2: multimodal DL training on Google Cloud}{26}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Phase 3: clinician-in-the-loop evaluation}{26}{section.10.3}%
+\contentsline {chapter}{\numberline {A}Project Reproducibility Snapshot}{27}{appendix.A}%
+\contentsline {chapter}{\numberline {B}MVP v1 Key Numeric Summary}{28}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Suggested Thesis Writing Checklist}{29}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Implementation and Experimentation Appendix}{30}{appendix.D}%
+\contentsline {section}{\numberline {D.1}Experiment tracking specification}{30}{section.D.1}%
+\contentsline {section}{\numberline {D.2}Data contract and feature lineage template}{31}{section.D.2}%
+\contentsline {section}{\numberline {D.3}Detailed DL hyperparameter search space}{31}{section.D.3}%
+\contentsline {section}{\numberline {D.4}Ablation matrix design}{32}{section.D.4}%
+\contentsline {section}{\numberline {D.5}Error taxonomy for clinical review}{32}{section.D.5}%
+\contentsline {section}{\numberline {D.6}Regulatory and ethical checklist for dissertation context}{33}{section.D.6}%
+\contentsline {section}{\numberline {D.7}Extended literature matrix for writing support}{33}{section.D.7}%
+\contentsline {section}{\numberline {D.8}Draft figure placeholders for final version}{36}{section.D.8}%
+\contentsline {section}{\numberline {D.9}Template compliance notes for final formatting}{37}{section.D.9}%
+\contentsline {section}{\numberline {D.10}Supervisor-feedback versioning strategy}{37}{section.D.10}%
+\contentsline {section}{\numberline {D.11}Concluding note of the appendix}{37}{section.D.11}%

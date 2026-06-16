@@ -1,0 +1,6 @@
+sleep_data_dir: /Volumes/CORSAIR/tese/datasets/nch-sleep/all_raw/Sleep_Data
+paired_count: 1833
+only_edf_count: 1
+only_tsv_count: 0
+only_edf_sample: ['10345_25318']
+only_tsv_sample: []

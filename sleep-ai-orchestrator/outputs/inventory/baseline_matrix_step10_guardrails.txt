@@ -1,0 +1,25 @@
+input_csv: /Volumes/CORSAIR/tese/sleep-ai-orchestrator/outputs/inventory/record_event_features_step9.csv
+output_csv: /Volumes/CORSAIR/tese/sleep-ai-orchestrator/outputs/inventory/baseline_matrix_step10.csv
+rows_output: 1833
+split_train: 1291
+split_val: 269
+split_test: 273
+target_positive: 187
+target_negative: 1646
+
+target_column: label_respiratory_burden_ge_5
+safe_feature_columns: ['event_rows_total', 'recording_hours_est', 'n_oxygen_desaturation', 'n_eeg_arousal']
+
+excluded_leakage_prone_columns:
+  - n_obstructive_apnea
+  - n_obstructive_hypopnea
+  - n_hypopnea_any
+  - n_apnea_any
+  - n_central_apnea
+  - n_mixed_apnea
+  - n_rera
+  - n_obstructive_events
+  - n_respiratory_events
+  - obstructive_event_rate_per_hour
+  - respiratory_event_rate_per_hour
+  - label_obstructive_any

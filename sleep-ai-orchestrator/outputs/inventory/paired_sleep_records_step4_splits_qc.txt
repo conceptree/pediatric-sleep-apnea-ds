@@ -1,0 +1,10 @@
+random_seed: 42
+ratios: train=0.7, val=0.15, test=0.15
+records_total: 1833
+patients_total: 1694
+records_train: 1291
+records_val: 269
+records_test: 273
+patients_train: 1185
+patients_val: 254
+patients_test: 255
